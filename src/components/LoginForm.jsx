@@ -34,7 +34,7 @@ const LoginForm = () => {
       window.location.reload();
       setError("");
     } catch (error) {
-      setError("incorrect credentials");
+      setError("username or password is incorrect");
     }
     //
   };

@@ -3,8 +3,13 @@
 import { ChatEngine } from "react-chat-engine";
 import "./App.css";
 import ChatFeed from "./components/ChatFeed";
+import LoginForm from "./components/LoginForm";
 
 function App() {
+  if (!localStorage.getItem("username")) {
+    return <LoginForm />;
+  }
+
   return (
     // Main container for the chat application
     <div className="App">
@@ -13,7 +18,7 @@ function App() {
         height="100vh" // Set the height of the ChatEngine component
         projectID="5872346f-4809-4ff9-9e66-4957ac68e886" // Unique project ID for authentication and accessing chat data
         userName="Mehdi" // User's username for authentication
-        userSecret="qwer" // User's secret or password for authentication
+        userSecret="rona1393" // User's secret or password for authentication
         // 'renderChatFeed' function to customize the chat feed appearance by passing props to the 'ChatFeed' component.
         renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
         // Action triggered when a new message arrives
