@@ -2,13 +2,9 @@ import { useState } from "react";
 
 import axios from "axios";
 
-// axios
-
-// useState
-
 const projectID = "5872346f-4809-4ff9-9e66-4957ac68e886";
 
-const LoginForm = () => {
+const Modal = () => {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -17,7 +13,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     const authObject = {
-      "Project-Id": projectID,
+      "Project-ID": projectID,
       "User-Name": username,
       "User-Secret": password,
     };
@@ -43,29 +39,28 @@ const LoginForm = () => {
     <div className="wrapper">
       <div className="form">
         <h1 className="title">Chat Application</h1>
-
         <form onSubmit={handleSubmit}>
           <input
-            className="input"
-            placeholder="Username"
             type="text"
             value={username}
             onChange={(e) => setUserName(e.target.value)}
+            className="input"
+            placeholder="Username"
             required
           />
 
           <input
-            className="input"
-            placeholder="Password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className="input"
+            placeholder="Password"
             required
           />
 
           <div align="center">
-            <button className="button">
-              <span>Start Chatting</span>
+            <button type="submit" className="button">
+              <span>Start chatting</span>
             </button>
           </div>
         </form>
@@ -76,4 +71,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default Modal;
