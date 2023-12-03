@@ -72,7 +72,13 @@ const ChatFeed = (props) => {
         <div className="chat-title">{chat?.title}</div>
 
         <div className="chat-subtitle">
-          {chat.people.map((person) => ` ${person.person.username} &`)}
+          {chat.people.map((person, index) => (
+            <span key={person.person.username}>
+              {person.person.username} {/* Displaying the username */}
+              {index !== chat.people.length - 1 && " & "}{" "}
+              {/* Adding '&' if it's not the last username */}
+            </span>
+          ))}
         </div>
       </div>
       {renderMessages()}
