@@ -65,7 +65,8 @@ const Modal = () => {
           </div>
         </form>
 
-        <h1>{error}</h1>
+        {/* Display error message */}
+        <div className="error-message">{error}</div>
       </div>
     </div>
   );
